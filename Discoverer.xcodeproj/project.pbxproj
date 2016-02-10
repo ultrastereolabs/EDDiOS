@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		048471B81C6968E900CB6BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471B71C6968E900CB6BA9 /* AppDelegate.swift */; };
-		048471BA1C6968E900CB6BA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471B91C6968E900CB6BA9 /* ViewController.swift */; };
-		048471BD1C6968E900CB6BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048471BB1C6968E900CB6BA9 /* Main.storyboard */; };
-		048471BF1C6968E900CB6BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048471BE1C6968E900CB6BA9 /* Assets.xcassets */; };
-		048471C21C6968E900CB6BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048471C01C6968E900CB6BA9 /* LaunchScreen.storyboard */; };
+		041823881C6A4EBD00350644 /* NetworkUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041823871C6A4EBD00350644 /* NetworkUtilities.swift */; };
 		048471CD1C6968E900CB6BA9 /* DiscovererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471CC1C6968E900CB6BA9 /* DiscovererTests.swift */; };
 		048471D81C6968E900CB6BA9 /* DiscovererUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471D71C6968E900CB6BA9 /* DiscovererUITests.swift */; };
+		048471EF1C69691E00CB6BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048471E61C69691E00CB6BA9 /* Main.storyboard */; };
+		048471F01C69691E00CB6BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048471E71C69691E00CB6BA9 /* Assets.xcassets */; };
+		048471F21C69691E00CB6BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471E91C69691E00CB6BA9 /* AppDelegate.swift */; };
+		048471F31C69691E00CB6BA9 /* EthernetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471EA1C69691E00CB6BA9 /* EthernetDetailViewController.swift */; };
+		048471F41C69691E00CB6BA9 /* EthernetDeviceWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471EB1C69691E00CB6BA9 /* EthernetDeviceWebView.swift */; };
+		048471F51C69691E00CB6BA9 /* EthernetHostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471EC1C69691E00CB6BA9 /* EthernetHostCell.swift */; };
+		048471F61C69691E00CB6BA9 /* EthernetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471ED1C69691E00CB6BA9 /* EthernetViewController.swift */; };
+		048471F71C69691E00CB6BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048471EE1C69691E00CB6BA9 /* LaunchScreen.storyboard */; };
+		04B00AEC1C6969A90026D081 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B00AEB1C6969A90026D081 /* Security.framework */; };
+		04B00AF61C696C3F0026D081 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B00AF51C696C3F0026D081 /* Default-568h@2x.png */; };
+		04B00AFB1C696EF00026D081 /* EthernetLicenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B00AFA1C696EF00026D081 /* EthernetLicenses.swift */; };
+		6B8FA9E2F59CD1CE36192EAD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31E3D8197295825C2B3661F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +42,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041823871C6A4EBD00350644 /* NetworkUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtilities.swift; sourceTree = "<group>"; };
 		048471B41C6968E900CB6BA9 /* Discoverer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discoverer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		048471B71C6968E900CB6BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		048471B91C6968E900CB6BA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		048471BC1C6968E900CB6BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		048471BE1C6968E900CB6BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		048471C11C6968E900CB6BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		048471C31C6968E900CB6BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048471C81C6968E900CB6BA9 /* DiscovererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscovererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048471CC1C6968E900CB6BA9 /* DiscovererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscovererTests.swift; sourceTree = "<group>"; };
 		048471CE1C6968E900CB6BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048471D31C6968E900CB6BA9 /* DiscovererUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscovererUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048471D71C6968E900CB6BA9 /* DiscovererUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscovererUITests.swift; sourceTree = "<group>"; };
 		048471D91C6968E900CB6BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048471E61C69691E00CB6BA9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		048471E71C69691E00CB6BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		048471E91C69691E00CB6BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		048471EA1C69691E00CB6BA9 /* EthernetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthernetDetailViewController.swift; sourceTree = "<group>"; };
+		048471EB1C69691E00CB6BA9 /* EthernetDeviceWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthernetDeviceWebView.swift; sourceTree = "<group>"; };
+		048471EC1C69691E00CB6BA9 /* EthernetHostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthernetHostCell.swift; sourceTree = "<group>"; };
+		048471ED1C69691E00CB6BA9 /* EthernetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthernetViewController.swift; sourceTree = "<group>"; };
+		048471EE1C69691E00CB6BA9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		048471F81C69693600CB6BA9 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		04B00AEB1C6969A90026D081 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		04B00AF51C696C3F0026D081 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		04B00AF81C696CA30026D081 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B00AFA1C696EF00026D081 /* EthernetLicenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthernetLicenses.swift; sourceTree = "<group>"; };
+		46C8844DA9DEA9E2DE16B6D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		51E520FFFFB78988D0F5303F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E31E3D8197295825C2B3661F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B00AEC1C6969A90026D081 /* Security.framework in Frameworks */,
+				6B8FA9E2F59CD1CE36192EAD /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +98,14 @@
 		048471AB1C6968E900CB6BA9 = {
 			isa = PBXGroup;
 			children = (
+				04B00AF51C696C3F0026D081 /* Default-568h@2x.png */,
+				048471F81C69693600CB6BA9 /* bridge.h */,
 				048471B61C6968E900CB6BA9 /* Discoverer */,
 				048471CB1C6968E900CB6BA9 /* DiscovererTests */,
 				048471D61C6968E900CB6BA9 /* DiscovererUITests */,
 				048471B51C6968E900CB6BA9 /* Products */,
+				8D0B540DBF5A66BC3AC89C2C /* Pods */,
+				2C9254EDA8EB23AD8813412B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +122,17 @@
 		048471B61C6968E900CB6BA9 /* Discoverer */ = {
 			isa = PBXGroup;
 			children = (
-				048471B71C6968E900CB6BA9 /* AppDelegate.swift */,
-				048471B91C6968E900CB6BA9 /* ViewController.swift */,
-				048471BB1C6968E900CB6BA9 /* Main.storyboard */,
-				048471BE1C6968E900CB6BA9 /* Assets.xcassets */,
-				048471C01C6968E900CB6BA9 /* LaunchScreen.storyboard */,
-				048471C31C6968E900CB6BA9 /* Info.plist */,
+				048471ED1C69691E00CB6BA9 /* EthernetViewController.swift */,
+				04B00AFA1C696EF00026D081 /* EthernetLicenses.swift */,
+				048471EA1C69691E00CB6BA9 /* EthernetDetailViewController.swift */,
+				048471EB1C69691E00CB6BA9 /* EthernetDeviceWebView.swift */,
+				048471EC1C69691E00CB6BA9 /* EthernetHostCell.swift */,
+				041823871C6A4EBD00350644 /* NetworkUtilities.swift */,
+				048471E91C69691E00CB6BA9 /* AppDelegate.swift */,
+				048471E61C69691E00CB6BA9 /* Main.storyboard */,
+				048471EE1C69691E00CB6BA9 /* LaunchScreen.storyboard */,
+				048471E71C69691E00CB6BA9 /* Assets.xcassets */,
+				04B00AF81C696CA30026D081 /* Info.plist */,
 			);
 			path = Discoverer;
 			sourceTree = "<group>";
@@ -125,6 +155,24 @@
 			path = DiscovererUITests;
 			sourceTree = "<group>";
 		};
+		2C9254EDA8EB23AD8813412B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04B00AEB1C6969A90026D081 /* Security.framework */,
+				E31E3D8197295825C2B3661F /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D0B540DBF5A66BC3AC89C2C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46C8844DA9DEA9E2DE16B6D0 /* Pods.debug.xcconfig */,
+				51E520FFFFB78988D0F5303F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 048471DC1C6968E900CB6BA9 /* Build configuration list for PBXNativeTarget "Discoverer" */;
 			buildPhases = (
+				73860A432DC9BE9A612E61E7 /* Check Pods Manifest.lock */,
 				048471B01C6968E900CB6BA9 /* Sources */,
 				048471B11C6968E900CB6BA9 /* Frameworks */,
 				048471B21C6968E900CB6BA9 /* Resources */,
+				6BE21736CBE4DE4AB22859CB /* Embed Pods Frameworks */,
+				B83D443EB3512B37B73C01DD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,9 +280,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048471C21C6968E900CB6BA9 /* LaunchScreen.storyboard in Resources */,
-				048471BF1C6968E900CB6BA9 /* Assets.xcassets in Resources */,
-				048471BD1C6968E900CB6BA9 /* Main.storyboard in Resources */,
+				048471F01C69691E00CB6BA9 /* Assets.xcassets in Resources */,
+				048471F71C69691E00CB6BA9 /* LaunchScreen.storyboard in Resources */,
+				04B00AF61C696C3F0026D081 /* Default-568h@2x.png in Resources */,
+				048471EF1C69691E00CB6BA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +303,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6BE21736CBE4DE4AB22859CB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73860A432DC9BE9A612E61E7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B83D443EB3512B37B73C01DD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		048471B01C6968E900CB6BA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048471BA1C6968E900CB6BA9 /* ViewController.swift in Sources */,
-				048471B81C6968E900CB6BA9 /* AppDelegate.swift in Sources */,
+				048471F41C69691E00CB6BA9 /* EthernetDeviceWebView.swift in Sources */,
+				048471F61C69691E00CB6BA9 /* EthernetViewController.swift in Sources */,
+				048471F31C69691E00CB6BA9 /* EthernetDetailViewController.swift in Sources */,
+				04B00AFB1C696EF00026D081 /* EthernetLicenses.swift in Sources */,
+				048471F51C69691E00CB6BA9 /* EthernetHostCell.swift in Sources */,
+				048471F21C69691E00CB6BA9 /* AppDelegate.swift in Sources */,
+				041823881C6A4EBD00350644 /* NetworkUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +396,6 @@
 			targetProxy = 048471D41C6968E900CB6BA9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		048471BB1C6968E900CB6BA9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				048471BC1C6968E900CB6BA9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		048471C01C6968E900CB6BA9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				048471C11C6968E900CB6BA9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		048471DA1C6968E900CB6BA9 /* Debug */ = {
@@ -397,23 +483,33 @@
 		};
 		048471DD1C6968E900CB6BA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C8844DA9DEA9E2DE16B6D0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Discoverer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = USL.Discoverer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Discoverer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
 		};
 		048471DE1C6968E900CB6BA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51E520FFFFB78988D0F5303F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Discoverer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = USL.Discoverer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Discoverer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -484,6 +580,7 @@
 				048471DE1C6968E900CB6BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		048471DF1C6968E900CB6BA9 /* Build configuration list for PBXNativeTarget "DiscovererTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +589,7 @@
 				048471E11C6968E900CB6BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		048471E21C6968E900CB6BA9 /* Build configuration list for PBXNativeTarget "DiscovererUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +598,7 @@
 				048471E41C6968E900CB6BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
