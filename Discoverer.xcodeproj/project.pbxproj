@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		041823881C6A4EBD00350644 /* NetworkUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041823871C6A4EBD00350644 /* NetworkUtilities.swift */; };
+		044B8CC51C73F7C20050F691 /* foundDevicesArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044B8CC41C73F7C20050F691 /* foundDevicesArray.plist */; };
+		0478BCB11C73E67B00B00D45 /* pickerArrayItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0478BCB01C73E67B00B00D45 /* pickerArrayItems.plist */; };
 		048471CD1C6968E900CB6BA9 /* DiscovererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471CC1C6968E900CB6BA9 /* DiscovererTests.swift */; };
 		048471D81C6968E900CB6BA9 /* DiscovererUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048471D71C6968E900CB6BA9 /* DiscovererUITests.swift */; };
 		048471EF1C69691E00CB6BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048471E61C69691E00CB6BA9 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		041823871C6A4EBD00350644 /* NetworkUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtilities.swift; sourceTree = "<group>"; };
+		044B8CC41C73F7C20050F691 /* foundDevicesArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = foundDevicesArray.plist; sourceTree = "<group>"; };
+		0478BCB01C73E67B00B00D45 /* pickerArrayItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pickerArrayItems.plist; sourceTree = "<group>"; };
 		048471B41C6968E900CB6BA9 /* Discoverer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discoverer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048471C81C6968E900CB6BA9 /* DiscovererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscovererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048471CC1C6968E900CB6BA9 /* DiscovererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscovererTests.swift; sourceTree = "<group>"; };
@@ -123,15 +127,17 @@
 			isa = PBXGroup;
 			children = (
 				048471ED1C69691E00CB6BA9 /* EthernetViewController.swift */,
+				048471EC1C69691E00CB6BA9 /* EthernetHostCell.swift */,
 				04B00AFA1C696EF00026D081 /* EthernetLicenses.swift */,
 				048471EA1C69691E00CB6BA9 /* EthernetDetailViewController.swift */,
 				048471EB1C69691E00CB6BA9 /* EthernetDeviceWebView.swift */,
-				048471EC1C69691E00CB6BA9 /* EthernetHostCell.swift */,
 				041823871C6A4EBD00350644 /* NetworkUtilities.swift */,
 				048471E91C69691E00CB6BA9 /* AppDelegate.swift */,
 				048471E61C69691E00CB6BA9 /* Main.storyboard */,
 				048471EE1C69691E00CB6BA9 /* LaunchScreen.storyboard */,
 				048471E71C69691E00CB6BA9 /* Assets.xcassets */,
+				0478BCB01C73E67B00B00D45 /* pickerArrayItems.plist */,
+				044B8CC41C73F7C20050F691 /* foundDevicesArray.plist */,
 				04B00AF81C696CA30026D081 /* Info.plist */,
 			);
 			path = Discoverer;
@@ -280,9 +286,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044B8CC51C73F7C20050F691 /* foundDevicesArray.plist in Resources */,
 				048471F01C69691E00CB6BA9 /* Assets.xcassets in Resources */,
 				048471F71C69691E00CB6BA9 /* LaunchScreen.storyboard in Resources */,
 				04B00AF61C696C3F0026D081 /* Default-568h@2x.png in Resources */,
+				0478BCB11C73E67B00B00D45 /* pickerArrayItems.plist in Resources */,
 				048471EF1C69691E00CB6BA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    ////////////////////Ethernet Global Access////////////////////
+    ////////////////////Global Access////////////////////
     
     //array for persisting data from host name list to detail view and back
     var foundDevicesArray:[EthernetViewController.DiscoveredDevice] = []
@@ -22,10 +22,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var foundDeviceIndex = 0
     //persisting button count between device list to detail view
     var buttonPressedCount:Int = 0
+    //array for storing sort field strings
+    var sortFieldTextDelegate:[String] = []
+    var globalCellIndexValue = 0
+    //sorting field arrays
+    var sortFieldHostNameArray:[String] = []
+    var sortFieldIPAddressArray:[String] = []
+    var sortFieldMACAddressArray:[String] = []
+    var sortFieldLocationArray:[String] = []
+    var sortFieldScreenArray:[String] = []
+    var sortFieldModelArray:[String] = []
+    var sortFieldSerialArray:[String] = []
+    var sortFieldStatusArray:[String] = []
     
     //////////////////////////////////////////////////////////////
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        /*
+        var sortPickerArray:[String] = []
+        
+        let pickerHostName = "Host Name"
+        let pickerLocation = "Location"
+        let pickerScreen = "Screen"
+        let pickerIPAddress = "IP Address"
+        let pickerMACAddress = "MAC Address"
+        let pickerModel = "Model"
+        let pickerStatus = "Status"
+        
+        sortPickerArray.append(pickerHostName)
+        sortPickerArray.append(pickerLocation)
+        sortPickerArray.append(pickerScreen)
+        sortPickerArray.append(pickerIPAddress)
+        sortPickerArray.append(pickerMACAddress)
+        sortPickerArray.append(pickerModel)
+        sortPickerArray.append(pickerStatus)
+        
+        if !NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce") {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        */
+        
         return true
     }
 

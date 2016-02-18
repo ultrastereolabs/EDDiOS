@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Host Name</string>
+	<string>Location</string>
+	<string>Screen</string>
+	<string>IP Address</string>
+	<string>MAC Address</string>
+	<string>Model</string>
+	<string>Serial</string>
+	<string>Status</string>
+</array>
+</plist>
