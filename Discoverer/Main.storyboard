@@ -314,10 +314,10 @@
                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="21"/>
                                 </textAttributes>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Devices Found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6c-lT-iMh" userLabel="devices found label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Devices Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6c-lT-iMh" userLabel="devices found label">
                                 <rect key="frame" x="20" y="131" width="403" height="44"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.63932291666666674" green="0.63932291666666674" blue="0.63932291666666674" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HostList" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eC4-zB-NSb" userLabel="Host name list">
@@ -469,7 +469,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEh-vo-B77">
-                                        <rect key="frame" x="0.0" y="2" width="600" height="60"/>
+                                        <rect key="frame" x="48" y="2" width="504" height="60"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
                                                 <attributes>
@@ -501,8 +501,8 @@
                                 <constraints>
                                     <constraint firstItem="tEh-vo-B77" firstAttribute="top" secondItem="yo1-ag-Unl" secondAttribute="top" constant="2" id="01H-Dm-OXb"/>
                                     <constraint firstItem="ciu-Dp-CDa" firstAttribute="leading" secondItem="yo1-ag-Unl" secondAttribute="leadingMargin" id="98T-hF-ji6"/>
-                                    <constraint firstItem="tEh-vo-B77" firstAttribute="leading" secondItem="yo1-ag-Unl" secondAttribute="leading" id="Cz8-kI-z9M"/>
-                                    <constraint firstAttribute="trailing" secondItem="tEh-vo-B77" secondAttribute="trailing" id="JXd-hG-74K"/>
+                                    <constraint firstItem="tEh-vo-B77" firstAttribute="leading" secondItem="yo1-ag-Unl" secondAttribute="leading" constant="48" id="Cz8-kI-z9M"/>
+                                    <constraint firstAttribute="trailing" secondItem="tEh-vo-B77" secondAttribute="trailing" constant="48" id="JXd-hG-74K"/>
                                     <constraint firstItem="ciu-Dp-CDa" firstAttribute="top" secondItem="yo1-ag-Unl" secondAttribute="top" constant="9" id="T8L-qo-zkA"/>
                                     <constraint firstItem="tEh-vo-B77" firstAttribute="centerY" secondItem="yo1-ag-Unl" secondAttribute="centerY" id="kTV-u7-KPr"/>
                                     <constraint firstItem="ciu-Dp-CDa" firstAttribute="centerY" secondItem="tEh-vo-B77" secondAttribute="centerY" id="qvb-Jd-SYT"/>
@@ -937,7 +937,7 @@
         <image name="uslsimple" width="736" height="254"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CNN-rL-A7M"/>
+        <segue reference="3TE-fA-Mh7"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.59438328330000001" blue="0.75757512950000006" alpha="0.0" colorSpace="calibratedRGB"/>
 </document>

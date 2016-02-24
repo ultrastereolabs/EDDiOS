@@ -1,7 +1,6 @@
 import UIKit
 import CocoaAsyncSocket
 import CoreFoundation
-import CoreGraphics
 import Darwin
 import Foundation
 
@@ -11,7 +10,6 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
     let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     //plist access
-    //let path = NSBundle.mainBundle().pathForResource("pickerArrayItems", ofType: "plist")
     let sortPickerArray = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("pickerArrayItems", ofType: "plist")!)
     
     ///////////////////////Static Objects///////////////////////
@@ -23,11 +21,10 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
     @IBOutlet weak var sortLabel: UILabel!
     @IBOutlet weak var devicesFoundLabel: UILabel!
     
-    
     ///////////////////////Dynamic Objects///////////////////////
     // MARK: - Dynamic Objects
     
-    @IBOutlet weak var discoverProgress: UIProgressView!
+    @IBOutlet var discoverProgress: UIProgressView!
     @IBOutlet weak var hostNameList: UITableView!
     
     ///////////////////////Actions///////////////////////
@@ -35,52 +32,35 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
     
     @IBAction func discoverButton(sender: UIButton!) {
         
-        // clear any previous sorting arrays
-        appDel.sortFieldHostNameArray = []
-        appDel.sortFieldIPAddressArray = []
-        appDel.sortFieldMACAddressArray = []
-        appDel.sortFieldLocationArray = []
-        appDel.sortFieldScreenArray = []
-        appDel.sortFieldModelArray = []
-        appDel.sortFieldSerialArray = []
-        appDel.sortFieldStatusArray = []
-        
-        //when discover button is pressed fill arrays with each data type for sorting
-        for (i, _) in appDel.foundDevicesArray.enumerate() {
-            appDel.sortFieldHostNameArray.append(appDel.foundDevicesArray[i].hostName)
-            appDel.sortFieldIPAddressArray.append(appDel.foundDevicesArray[i].IPAddress)
-            appDel.sortFieldMACAddressArray.append(appDel.foundDevicesArray[i].MACAddress)
-            appDel.sortFieldLocationArray.append(appDel.foundDevicesArray[i].location)
-            appDel.sortFieldScreenArray.append(appDel.foundDevicesArray[i].screen)
-            appDel.sortFieldModelArray.append(appDel.foundDevicesArray[i].model)
-            appDel.sortFieldSerialArray.append(appDel.foundDevicesArray[i].serial)
-            appDel.sortFieldStatusArray.append(appDel.foundDevicesArray[i].status)
-        }
-        
         // outer if block is a simple debouncer
         if discoverProgress.progress == 0 {
             
-            // instantiate a timer
+            // instantiate a timer, calls counter's didSet
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerFire", userInfo: nil, repeats: true)
             
-            // prevent data duplication
-            if appDel.buttonPressedCount < 1 {
-                // allow new data to fill foundDevicesArray the first time
-            }else{
-                // empty the array for new data
-                appDel.foundDevicesArray = []
-            }
+            appDel.foundDevicesArray = []
+            // clear any previous sorting arrays
+            appDel.sortFieldHostNameArray = []
+            appDel.sortFieldIPAddressArray = []
+            appDel.sortFieldMACAddressArray = []
+            appDel.sortFieldLocationArray = []
+            appDel.sortFieldScreenArray = []
+            appDel.sortFieldModelArray = []
+            appDel.sortFieldSerialArray = []
+            appDel.sortFieldStatusArray = []
             
             // note: discoverDevices triggers udpSocket()
             discoverDevices()
             hostNameList.reloadData()
-
+            
+            // reset state check
+            didGetUDPM = false
         }
         
         //increments button count to prevent reloading of dupe data
         appDel.buttonPressedCount = appDel.buttonPressedCount + 1
-        
-    }
+
+    } // end discover button
     
     @IBAction func licensesButton(sender: UIButton) {
          self.performSegueWithIdentifier("licenseSegue", sender: self)
@@ -125,7 +105,6 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
     ///////////////////////Host Name table///////////////////////
     // MARK: - Host Name table
     
-    
     func numberOfSectionsInTableView(hostNameList: UITableView) -> Int {
         return 1
     }
@@ -135,8 +114,6 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
     }
     
     func tableView(hostNameList: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        appDel.globalCellIndexValue = indexPath.row
         
         let cell = hostNameList.dequeueReusableCellWithIdentifier("EthernetHostCell", forIndexPath: indexPath) as! EthernetHostCell
         
@@ -180,14 +157,45 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
     var counter:Float = 0.0 {
         didSet{
             discoverProgress.progress = counter
+            // when done...
             if counter >= 1.0{
+                // print alert if nothing found
+                if didGetUDPM == false {
+                    self.alert("No devices found 😕")
+                }
+                // kill timer
                 timer.invalidate()
+                // set picker when timer reaches full
+                switch self.pickerTextField.text {
+                    case "Host Name"?:
+                        pickerView(picker, didSelectRow: 0, inComponent: 1)
+                    case "Location"?:
+                        pickerView(picker, didSelectRow: 1, inComponent: 1)
+                    case "Screen"?:
+                        pickerView(picker, didSelectRow: 2, inComponent: 1)
+                    case "IP Address"?:
+                        pickerView(picker, didSelectRow: 3, inComponent: 1)
+                    case "MAC Address"?:
+                        pickerView(picker, didSelectRow: 4, inComponent: 1)
+                    case "Model"?:
+                        pickerView(picker, didSelectRow: 5, inComponent: 1)
+                    case "Serial"?:
+                        pickerView(picker, didSelectRow: 6, inComponent: 1)
+                    case "Status"?:
+                        pickerView(picker, didSelectRow: 7, inComponent: 1)
+                    default:
+                        break
+                }
+                // reset discover bar
                 discoverProgress.progress = 0.0
+                // reset counter
                 counter = 0.0
+                // reload table
                 hostNameList.reloadData()
-            } // end if
+                hostNameList.reloadInputViews()
+            } // end if counter done
         } // end counter didset
-    } //end counter var
+    } //end counter
     
     func timerFire() {
         counter = counter + 0.01
@@ -196,8 +204,11 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
     ///////////////////////Sort Mode Pickerview///////////////////////
     // MARK: - Pickerview
     
+    //text field outlet
     @IBOutlet weak var pickerTextField: UITextField!
+    //picker source
     var picker: UIPickerView = UIPickerView()
+    var pickerTextDelegate:String?
     
     //string attribute for later fancification
     // let pickerStringAttribute = [ NSFontAttributeName: UIFont(name: "AvenirNext-UltraLight", size: 18.0)! ]
@@ -223,6 +234,7 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
         
         //set text field to items in picker
         self.pickerTextField.text = self.sortPickerArray![row] as? String
+        pickerTextDelegate = self.pickerTextField.text
         self.pickerTextField.resignFirstResponder()
         
         // sort foundDevicesArray to arrange cells by selected sort mode; set sort field to point to the array based on sort mode text
@@ -258,14 +270,14 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
         // sort the delegate 'sort field' text
         appDel.sortFieldTextDelegate.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
         
-        // reload table
         hostNameList.reloadData()
+
     }
-    
     
     ///////////////////////Data///////////////////////
     // MARK: - Data
     
+    // user settings for future implementation
     // let defaults = NSUserDefaults.standardUserDefaults()
     
     // found device struct
@@ -283,11 +295,13 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
     ///////////////////////Socket///////////////////////
     // MARK: - Socket
     
-    
     // socket info
     var portNumber: UInt16 = 30303
     var udpSocket: GCDAsyncUdpSocket?
     var netInfo: NetInfo?
+    
+    // UDP received state check
+    var didGetUDPM:Bool = false
     
     // called when a UDP message gets received
     func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
@@ -295,7 +309,7 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
         if let mssg = String(data: data, encoding: NSASCIIStringEncoding) {
             // take glob data and split into array of individual items
             var mssgItemArray:[String] = ["","","","","","","",""]
-            // use enumerate to give each component an index
+            // index the message via components separated by character return line feed
             for (index, mssgComponent) in mssg.componentsSeparatedByString("\r\n").enumerate(){
                 mssgItemArray[index] = "\(mssgComponent)"
             } // end item loop
@@ -314,15 +328,58 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
                 status: "\(mssgItemArray[6])",
                 IPAddress: "\(mssgItemArray[7])")
             
-            // filter errant results and duplicates
+            // filter errant results, prepare for sorting
+            if deviceFound.MACAddress != "" {
+                
+                appDel.foundDevicesArray.append(deviceFound)
+                // appDel.sortFieldHostNameArray.append(deviceFound.hostName)
+                appDel.sortFieldIPAddressArray.append(deviceFound.IPAddress)
+                appDel.sortFieldMACAddressArray.append(deviceFound.MACAddress)
+                appDel.sortFieldLocationArray.append(deviceFound.location)
+                appDel.sortFieldScreenArray.append(deviceFound.screen)
+                appDel.sortFieldModelArray.append(deviceFound.model)
+                appDel.sortFieldSerialArray.append(deviceFound.serial)
+                appDel.sortFieldStatusArray.append(deviceFound.status)
+                
+                // resort arrays every time a new element is added
+                switch self.pickerTextField.text {
+                    case "Host Name"?:
+                        appDel.foundDevicesArray.sortInPlace({$0.hostName.localizedCaseInsensitiveCompare($1.hostName) == NSComparisonResult.OrderedAscending})
+                        appDel.sortFieldHostNameArray.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
+                    case "Location"?:
+                        appDel.foundDevicesArray.sortInPlace({$0.location.localizedCaseInsensitiveCompare($1.location) == NSComparisonResult.OrderedAscending})
+                        appDel.sortFieldIPAddressArray.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
+                    case "Screen"?:
+                        appDel.foundDevicesArray.sortInPlace({$0.screen.localizedCaseInsensitiveCompare($1.screen) == NSComparisonResult.OrderedAscending})
+                        appDel.sortFieldMACAddressArray.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
+                    case "IP Address"?:
+                        appDel.foundDevicesArray.sortInPlace({$0.IPAddress.localizedCaseInsensitiveCompare($1.IPAddress) == NSComparisonResult.OrderedAscending})
+                        appDel.sortFieldLocationArray.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
+                    case "MAC Address"?:
+                        appDel.foundDevicesArray.sortInPlace({$0.MACAddress.localizedCaseInsensitiveCompare($1.MACAddress) == NSComparisonResult.OrderedAscending})
+                        appDel.sortFieldScreenArray.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
+                    case "Model"?:
+                        appDel.foundDevicesArray.sortInPlace({$0.model.localizedCaseInsensitiveCompare($1.model) == NSComparisonResult.OrderedAscending})
+                        appDel.sortFieldModelArray.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
+                    case "Serial"?:
+                        appDel.foundDevicesArray.sortInPlace({$0.serial.localizedCaseInsensitiveCompare($1.serial) == NSComparisonResult.OrderedAscending})
+                        appDel.sortFieldSerialArray.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
+                    case "Status"?:
+                        appDel.foundDevicesArray.sortInPlace({$0.status.localizedCaseInsensitiveCompare($1.status) == NSComparisonResult.OrderedAscending})
+                        appDel.sortFieldStatusArray.sortInPlace({$0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending})
+                    default:
+                        break
+                }
+                
+            } // end errant result handling
             
-            // let predicate = NSPredicate(format: "deviceFound != nil")
-            if deviceFound.MACAddress != "" { // && appDel.foundDevicesArray.contains(deviceFound) == false
-                self.appDel.foundDevicesArray.append(deviceFound)
-            } // end if
+            //ping didgetUDP
+            didGetUDPM = true
+            print("got udp")
             
-            
-        } // end mssg string process
+        } // end new UDP message received
+        
+        // error handle
         else {
             print("UNKNOWN MSSG: \(data)")
             dispatch_async(dispatch_get_main_queue()) {
