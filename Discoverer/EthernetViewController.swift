@@ -102,7 +102,7 @@ class EthernetViewController: UIViewController, GCDAsyncUdpSocketDelegate, UITab
         didReceiveMemoryWarning()
     }
     
-    ///////////////////////Host Name table///////////////////////
+    ///////////////////////Host Name Table///////////////////////
     // MARK: - Host Name table
     
     func numberOfSectionsInTableView(hostNameList: UITableView) -> Int {

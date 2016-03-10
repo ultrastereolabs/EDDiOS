@@ -28,7 +28,7 @@ class EthernetDeviceWebView: UIViewController {
         deviceWebView.loadRequest(deviceURLRequest)
         
         //left swipe
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
     }
